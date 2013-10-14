@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
-	<info organisation="org.graylog2" module="play2-graylog2_2.10" revision="1.0-SNAPSHOT" status="integration" publication="20131011143752">
+	<info organisation="org.graylog2" module="play2-graylog2_2.10" revision="1.0-SNAPSHOT" status="integration" publication="20131014142747">
 		<description>
 		play2-graylog2
 		</description>
