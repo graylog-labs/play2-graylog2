@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Graylog2 Play Framework 2 Repository</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play2 framework repository for access log and graylog2 appender modules">
+    <meta name="author" content="TORCH.sh">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .justified {
+      text-align: justify;
+    }
+
+    code {
+      font-size: 75%;
+    }
+    pre {
+      font-size: 75%;
+      overflow: scroll;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://graylog2.org">About Graylog2</a></li>
+          <li><a href="https://www.torch.sh/">Get Help</a></li>
+        </ul>
+        <h3 class="text-muted">Graylog2 repository for Play</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Graylog2 for Play</h1>
+        <p class="lead">Bring <a href="http://graylog2.org">Graylog2</a> to your <a href="http://playframework.org">Play 2</a> application by using the<br>access log and application log module and enjoy the power of centralized logging.</p>
+        <p><a class="btn btn-lg btn-success" href="#">See a demo</a></p>
+      </div>
+      <div>
+        <p class="justified">The Graylog2 module enables you to write both your Play access log as well as your application log to a Graylog2 server, in addition to the log files on your machines.</p>
+        <p class="justified">You can opt to use both features, or disable either one at will, if for example your are only interested in centralized access logs.</p>
+      </div>
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Access Log</h4>
+          <p class="justified">The Play framework does not ship with an access log by default, making it difficult to analyze application usage in production.<br>Using this module you can easily get a centralized access log.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Application log</h4>
+          <p class="justified">The Graylog2 Play module implements a standard logback appender, thereby making it easy to forward all of your application's logs to your Graylog2 system for easier analysis and debugging.</p>
+        </div>
+      </div>
+      <div class="row">
+        <h4>Add the dependency</h4>
+        <p>In your <code>appDependencies</code> add the following new dependency:</p>
+        <pre>"org.graylog2" % "play2-graylog2_2.10" % "1.0-SNAPSHOT"</pre>
+      </div>
+      <div class="row">
+        <h4>Add the resolver</h4>
+        <p>In your <code>build.sbt</code> or <code>Build.scala</code> add the following new resolvers:</p>
+        <pre>
+val main = play.Project(appName, appVersion, appDependencies).settings(
+  resolvers += Resolver.url("Graylog2 Play Repository", url("http://http://graylog2.github.io/play2-graylog2/releases/"))(Resolver.ivyStylePatterns),
+  resolvers += Resolver.url("Graylog2 Play Snapshot Repository", url("http://graylog2.github.io/play2-graylog2/snapshots/"))(Resolver.ivyStylePatterns)
+)
+        </pre>
+      </div>
+      <div class="row">
+        <h4>Usage</h4>
+        <p>Please refer to the module's <a href="https://github.com/Graylog2/play2-graylog2/tree/master/project-code">README</a> for further information on how to configure the components.</p>
+      </div>
+      <div class="footer">
+        <p>&copy; TORCH.sh 2013, this module is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 license</a>. Get the <a href="https://github.com/Graylog2/play2-graylog2">code</a>.</p>
+      </div>
+
+    </div> <!-- /container -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
