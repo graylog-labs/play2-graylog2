@@ -66,10 +66,17 @@
       </div>
       <div class="row">
         <h4>Add the resolver</h4>
-        <p>In your <code>build.sbt</code> or <code>Build.scala</code> add the following new resolvers:</p>
+        <p>Add the following new resolvers to your <code>build.sbt</code>:</p>
+        <pre>
+resolvers ++= Seq(
+  Resolver.url("Graylog Play Repository", url("http://graylog2.github.io/play2-graylog2/releases/"))(Resolver.ivyStylePatterns),
+  Resolver.url("Graylog Play Snapshot Repository", url("http://graylog2.github.io/play2-graylog2/snapshots/"))(Resolver.ivyStylePatterns)
+)
+        </pre>
+        <p>Alternatively add the following new resolvers to your <code>Build.scala</code> file:</p>
         <pre>
 val main = play.Project(appName, appVersion, appDependencies).settings(
-  resolvers += Resolver.url("Graylog2 Play Repository", url("http://http://graylog2.github.io/play2-graylog2/releases/"))(Resolver.ivyStylePatterns),
+  resolvers += Resolver.url("Graylog2 Play Repository", url("http://graylog2.github.io/play2-graylog2/releases/"))(Resolver.ivyStylePatterns),
   resolvers += Resolver.url("Graylog2 Play Snapshot Repository", url("http://graylog2.github.io/play2-graylog2/snapshots/"))(Resolver.ivyStylePatterns)
 )
         </pre>
